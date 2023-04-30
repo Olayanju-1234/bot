@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp-bot",
+  "description": "To be added later because I dont know what I am about to build",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olayanju-1234/bot.git"
+  },
+  "author": "Joseph Olayanju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olayanju-1234/bot/issues"
+  },
+  "homepage": "https://github.com/Olayanju-1234/bot#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "venom-bot": "^5.0.0",
+    "whatsapp-web.js": "^1.19.5"
+  }
+}
