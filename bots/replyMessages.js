@@ -1,27 +1,13 @@
-// Import Venom Bot
-const { create } = require('venom-bot');
-
-// Define the replymessage function
-async function replymessage() {
-  try {
-    // Create a new Venom Bot session
-    const client = await create({
-      session: 'replymessage',
-      logQR: true
-    });
-
-    // Define the reply message
-    const replyMessage = 'Hello! Thank you for messaging me.';
-
-    // Listen for incoming messages
+module.exports = function setupReplyMessage(client) {
     client.onMessage(async (message) => {
-      // Reply with the predefined message
-      await client.sendText(message.from, replyMessage);
+      if (message.body.toLowerCase() === 'hi') {
+        try {
+          await client.sendText(message.from, 'Hello!');
+          console.log(`Sent "Hello!" to ${message.from}`);
+        } catch (error) {
+          console.error(`Error sending message to ${message.from}:`, error);
+        }
+      }
     });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-// Export the replymessage function
-module.exports = replymessage;
+  };
+  

@@ -1,9 +1,12 @@
+const getClient = require('./initBot');
+const setupReplyMessage = require('./bots/replyMessages');
+const setupStickerBot = require('./bots/stickerSender');
 
-// Import the bot functionalities
-const stickerbot = require('./bots/stickerbot');
-const replymessage = require('./bots/replymessage');
+async function start() {
+  const client = await getClient();
 
-// Initialize the bots
-stickerbot();
-replymessage();
+  setupReplyMessage(client);
+  setupStickerBot(client);
+}
 
+start().catch((error) => console.error('Error starting bot:', error));
